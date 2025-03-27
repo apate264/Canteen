@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order - Crusher's Canteen</title>
+    <link rel="stylesheet" href="CSS/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+     <!-- Navbar with food image background -->
+    <nav class="navbar">
+        
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="canteen.html" class="active">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="custom.html">Custom Order</a>
+            <a href="about.html">About</a>
+        </div>
+        <!-- Logo in navbar -->
+        <div class="navbar-logo">
+            <!-- logo path -->
+            <img src="Pics/Crusher - non bg.png" alt="Crusher's Canteen Logo">
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav> 
+
+    <main>
+        <section class="custom-hero">
+            <div class="hero-flex">
+                <div class="hero-content">
+                    <h2>Create Your Custom Order</h2>
+                    <p>Customise your favorite foods and drinks just the way you like them!</p>
+                </div>
+                <div class="hero-image">
+                    <img src="Pics/POS.jpeg" alt="Food Order Hero">
+                </div>
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <section class="custom-content">
+                <form id="customOrderForm" class="order-form">
+                    <!-- Customer Information Section -->
+                    <div class="section-header">
+                        <h3>Customer Information</h3>
+                    </div>
+                    <div class="customer-info">
+                        <div class="input-group">
+                            <label for="customerName">Your Name</label>
+                            <input type="text" id="customerName" name="customerName" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <!-- Allergies Section -->
+                        <div class="allergy-section">
+                            <h4>Allergies Information</h4>
+                            <p>Please select any allergies we should be aware of:</p>
+                            <div class="allergy-options">
+                                <label class="checkbox-container allergy-option">
+                                    <input type="checkbox" name="allergies" value="gluten">
+                                    <span class="checkbox-label">Gluten</span>
+                                </label>
+                                <label class="checkbox-container allergy-option">
+                                    <input type="checkbox" name="allergies" value="dairy">
+                                    <span class="checkbox-label">Dairy</span>
+                                </label>
+                                <label class="checkbox-container allergy-option">
+                                    <input type="checkbox" name="allergies" value="nuts">
+                                    <span class="checkbox-label">Nuts</span>
+                                </label>
+                                <label class="checkbox-container allergy-option">
+                                    <input type="checkbox" name="allergies" value="seafood">
+                                    <span class="checkbox-label">Seafood</span>
+                                </label>
+                                <label class="checkbox-container allergy-option">
+                                    <input type="checkbox" name="allergies" value="egg">
+                                    <span class="checkbox-label">Egg</span>
+                                </label>
+                            </div>
+                            <div class="input-group">
+                                <label for="allergyNotes">Additional Allergy Notes</label>
+                                <textarea id="allergyNotes" name="allergyNotes" placeholder="Please specify any other allergies or dietary requirements"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-header">
+                        <h3>Food Options</h3>
+                    </div>
+
+                    <div class="food-type-selector">
+                        <h4>Select Your Base Item</h4>
+                        <div class="food-type-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodType" value="sushi">
+                                
+                                <div class="item-image">
+                                    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sushi Roll">
+                                </div>
+                                <span class="checkbox-label">Sushi Roll</span>
+                                <span class="base-price">$5.00</span>
+                                <div class="quantity-control" data-item="sushi">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodType" value="sausageRoll">
+                                <div class="item-image">
+                                    <img src="Pics/sausage.jpeg" alt="Sausage Roll">
+                                </div>
+                                <span class="checkbox-label">Sausage Roll</span>
+                                <span class="base-price">$4.00</span>
+                                <div class="quantity-control" data-item="sausageRoll">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodType" value="hotChips">
+                                <div class="item-image">
+                                    <img src="Pics/hotchips.jpeg" alt="hotChips">
+                                </div>
+                                <span class="checkbox-label">Hot Chips</span>
+                                <span class="base-price">$3.50</span>
+                                <div class="quantity-control" data-item="hotChips">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodType" value="steakPie">
+                                <div class="item-image">
+                                    <img src="Pics/hotchips.jpeg" alt="hotChips">
+                                </div>
+                                <span class="checkbox-label">Chunky Steak Pie</span>
+                                <span class="base-price">$5.50</span>
+                                <div class="quantity-control" data-item="steakPie">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="foodType" value="chickenSaladRoll">
+                                <div class="item-image">
+                                    <img src="Pics/Chicken Salad Roll.jpg" alt="chickenSaladRoll">
+                                </div>
+                                <span class="checkbox-label">Chicken Salad Roll</span>
+                                <span class="base-price">$5.00</span>
+                                <div class="quantity-control" data-item="chickenSaladRoll">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="foodType" value="ricePaperRolls">
+                                <div class="item-image">
+                                    <img src="Pics/Rice Paper Roll.jpeg" alt="ricePaperRolls">
+                                </div>
+                                <span class="checkbox-label">Rice Paper Rolls</span>
+                                <span class="base-price">$4.00</span>
+                                <div class="quantity-control" data-item="ricePaperRolls">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Sushi options -->
+                    <div id="sushiOptions" class="customisation-section">
+                        <h3>Customize Your Sushi Roll</h3>
+
+                        <div class="option-group">
+                            <h4>Select Protein (Choose 1)</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="sushiProtein" value="chickenKatsu" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-drumstick-bite"></i>
+                                    </div>
+                                    <span class="radio-label">Chicken Katsu</span>
+                                    <span class="price">+$0.00</span>
+                                    <div class="quantity-control" data-item="chickenKatsu">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="sushiProtein" value="tunaSalad">
+                                    <div class="item-image">
+                                        <i class="fas fa-fish"></i>
+                                    </div>
+                                    <span class="radio-label">Tuna Salad</span>
+                                    <span class="price">+$0.50</span>
+                                    <div class="quantity-control" data-item="tunaSalad">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="sushiProtein" value="spicyPrawn">
+                                    <div class="item-image">
+                                        <i class="fas fa-fish"></i>
+                                    </div>
+                                    <span class="radio-label">Spicy Prawn</span>
+                                    <span class="price">+$1.50</span>
+                                    <div class="quantity-control" data-item="spicyPrawn">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <h4>Select Rice Type (Choose 1)</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="riceType" value="white" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-bowl-rice"></i>
+                                    </div>
+                                    <span class="radio-label">White Rice</span>
+                                    <span class="price">+$0.00</span>
+                                    <div class="quantity-control" data-item="whiteRice">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="riceType" value="brown">
+                                    <div class="item-image">
+                                        <i class="fas fa-bowl-rice"></i>
+                                    </div>
+                                    <span class="radio-label">Brown Rice</span>
+                                    <span class="price">+$1.00</span>
+                                    <div class="quantity-control" data-item="brownRice">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <h4>Select Toppings (Choose up to 2)</h4>
+                            <div class="options-grid">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="sushiVege" value="avocado" data-max-select="2">
+                                    <div class="item-image">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <span class="checkbox-label">Avocado</span>
+                                    <span class="price">+$1.00</span>
+                                    <div class="quantity-control" data-item="avocado">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="sushiVege" value="cucumber" data-max-select="2">
+                                    <div class="item-image">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <span class="checkbox-label">Cucumber</span>
+                                    <span class="price">+$0.50</span>
+                                    <div class="quantity-control" data-item="cucumber">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="sushiVege" value="carrot" data-max-select="2">
+                                    <div class="item-image">
+                                        <i class="fas fa-carrot"></i>
+                                    </div>
+                                    <span class="checkbox-label">Carrot</span>
+                                    <span class="price">+$0.75</span>
+                                    <div class="quantity-control" data-item="carrot">
+                                        <button type="button" class="qty-dec">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="5">
+                                        <button type="button" class="qty-inc">+</button>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hot Chips options -->
+                    <div id="hotChipsOptions" class="customisation-section hidden">
+                        <h3>Customize Your Hot Chips</h3>
+                        <div class="option-group">
+                            <h4>Select Size</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="chipSize" value="regular" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <span class="radio-label">Regular</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="chipSize" value="large">
+                                    <div class="item-image">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <span class="radio-label">Large</span>
+                                    <span class="price">+$1.50</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sausage Roll options -->
+                    <div id="sausageRollOptions" class="customisation-section hidden">
+                        <h3>Customize Your Sausage Roll</h3>
+                        <div class="option-group">
+                            <h4>Select Type</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="sausageType" value="regular" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-hotdog"></i>
+                                    </div>
+                                    <span class="radio-label">Regular</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="sausageType" value="spicy">
+                                    <div class="item-image">
+                                        <i class="fas fa-hotdog"></i>
+                                    </div>
+                                    <span class="radio-label">Spicy</span>
+                                    <span class="price">+$0.50</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Steak Pie options -->
+                    <div id="steakPieOptions" class="customisation-section hidden">
+                        <h3>Customize Your Chunky Steak Pie</h3>
+                        <div class="option-group">
+                            <h4>Select Type</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="pieType" value="regular" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-pie"></i>
+                                    </div>
+                                    <span class="radio-label">Regular</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="pieType" value="mushroom">
+                                    <div class="item-image">
+                                        <i class="fas fa-pie"></i>
+                                    </div>
+                                    <span class="radio-label">With Mushroom</span>
+                                    <span class="price">+$0.75</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chicken Salad Roll options -->
+                    <div id="chickenSaladRollOptions" class="customisation-section hidden">
+                        <h3>Customize Your Chicken Salad Roll</h3>
+                        <div class="option-group">
+                            <h4>Select Bread Type</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="breadType" value="white" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <span class="radio-label">White</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="breadType" value="wholemeal">
+                                    <div class="item-image">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <span class="radio-label">Wholemeal</span>
+                                    <span class="price">+$0.50</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="breadType" value="glutenFree">
+                                    <div class="item-image">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <span class="radio-label">Gluten Free</span>
+                                    <span class="price">+$1.00</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <h4>Select Extras (Choose up to 2)</h4>
+                            <div class="options-grid">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="rollExtras" value="cheese" data-max-select="2">
+                                    <div class="item-image">
+                                        <i class="fas fa-cheese"></i>
+                                    </div>
+                                    <span class="checkbox-label">Cheese</span>
+                                    <span class="price">+$0.50</span>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="rollExtras" value="avocado" data-max-select="2">
+                                    <div class="item-image">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <span class="checkbox-label">Avocado</span>
+                                    <span class="price">+$1.00</span>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="rollExtras" value="egg" data-max-select="2">
+                                    <div class="item-image">
+                                        <i class="fas fa-egg"></i>
+                                    </div>
+                                    <span class="checkbox-label">Boiled Egg</span>
+                                    <span class="price">+$0.75</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rice Paper Rolls options -->
+                    <div id="ricePaperRollsOptions" class="customisation-section hidden">
+                        <h3>Customize Your Rice Paper Rolls</h3>
+                        <div class="option-group">
+                            <h4>Select Quantity</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="ricePaperQuantity" value="two" checked>
+                                    <div class="item-image">
+                                        <i class="fas fa-scroll"></i>
+                                    </div>
+                                    <span class="radio-label">2 Rolls</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="ricePaperQuantity" value="four">
+                                    <div class="item-image">
+                                        <i class="fas fa-scroll"></i>
+                                    </div>
+                                    <span class="radio-label">4 Rolls</span>
+                                    <span class="price">+$3.50</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sauce options -->
+                    <div class="option-group">
+                        <h4>Select Sauce</h4>
+                        <div class="options-grid">
+                            <label class="radio-container">
+                                <input type="radio" name="sauce" value="none" checked>
+                                <div class="item-image">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <span class="radio-label">No Sauce</span>
+                                <span class="price">+$0.00</span>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="sauce" value="soy">
+                                <div class="item-image">
+                                    <img src="Pics/soy sauce .jpeg" alt="soy">
+                                </div>
+                                <span class="radio-label">Soy Sauce</span>
+                                <span class="price">+$0.50</span>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="sauce" value="mayo">
+                                <div class="item-image">
+                                    <img src="Pics/mayo.jpeg" alt="mayo">
+                                </div>
+                                <span class="radio-label">Mayo</span>
+                                <span class="price">+$0.50</span>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="sauce" value="teriyaki">
+                                <div class="item-image">
+                                    <img src="Pics/teriyaki .jpeg" alt="teriyaki">
+                                </div>
+                                <span class="radio-label">Teriyaki</span>
+                                <span class="price">+$0.50</span>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="sauce" value="tomato">
+                                <div class="item-image">
+                                    <img src="Pics/tomato.jpeg" alt="tomato">
+                                </div>
+                                <span class="radio-label">Tomato Sauce</span>
+                                <span class="price">+$0.50</span>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="sauce" value="bbq">
+                                <div class="item-image">
+                                    <img src="Pics/bbq.jpeg" alt="bbq">
+                                </div>
+                                <span class="radio-label">BBQ Sauce</span>
+                                <span class="price">+$0.50</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Combo Options -->
+                    <div class="section-header">
+                        <h3>Make it a Combo</h3>
+                    </div>
+                    <div class="option-group">
+                        <div class="combo-option">
+                            <label class="checkbox-container wide">
+                                <input type="checkbox" name="comboOption" value="combo">
+                                <div class="item-image">
+                                    <img src="Pics/combo.jpeg" alt="Combo">
+                                </div>
+                                <span class="checkbox-label">Add Hot Chips + Drink</span>
+                                <span class="price">+$4.00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Drink Options -->
+                    <div id="drinkOptions" class="option-group">
+                        <h4>Select Drink</h4>
+                        <div class="options-grid">
+                            <label class="radio-container">
+                                <input type="radio" name="drink" value="none" checked>
+                                <div class="item-image">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <span class="radio-label">No Drink</span>
+                                <span class="price">+$0.00</span>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="drink" value="softDrink">
+                                <div class="item-image">
+                                    <img src="Pics/Soft drink.jpeg" alt="softDrink">
+                                </div>
+                                <span class="radio-label">Soft Drink</span>
+                                <span class="price">+$0.00</span>
+                                <div class="quantity-control" data-item="softDrink">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="drink" value="water">
+                                <div class="item-image">
+                                    <img src="Pics/water.jpeg" alt="water">
+                                </div>
+                                <span class="radio-label">Water</span>
+                                <span class="price">+$0.00</span>
+                                <div class="quantity-control" data-item="water">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="drink" value="coffee">
+                                <div class="item-image">
+                                    <img src="Pics/coffee.jpeg" alt="coffee">
+                                </div>
+                                <span class="radio-label">Coffee</span>
+                                <span class="price">+$1.50</span>
+                                <div class="quantity-control" data-item="coffee">
+                                    <button type="button" class="qty-dec">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="5">
+                                    <button type="button" class="qty-inc">+</button>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Coffee Customisation -->
+                    <div id="coffeeOptions" class="customisation-section hidden">
+                        <h3>Customize Your Coffee</h3>
+                        
+                        <div class="option-group">
+                            <h4>Select Size</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="coffeeSize" value="regular" checked>
+                                    <div class="item-image">
+                                        <img src="Pics/coffee.jpeg" alt="coffee">
+                                    </div>
+                                    <span class="radio-label">Regular</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="coffeeSize" value="large">
+                                    <div class="item-image">
+                                        <img src="Pics/largecoffee.jpeg" alt="coffee">
+                                    </div>
+                                    <span class="radio-label">Large</span>
+                                    <span class="price">+$1.50</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h4>Select Milk Type</h4>
+                            <div class="options-grid">
+                                <label class="radio-container">
+                                    <input type="radio" name="coffeeMilk" value="regular" checked>
+                                    <div class="item-image">
+                                        <img src="Pics/regular milk.jpeg" alt="regular">
+                                    </div>
+                                    <span class="radio-label">Regular</span>
+                                    <span class="price">+$0.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="coffeeMilk" value="soyMilk">
+                                    <div class="item-image">
+                                        <img src="Pics/soy milk.jpeg" alt="soyMilk">
+                                    </div>
+                                    <span class="radio-label">Soy Milk</span>
+                                    <span class="price">+$1.00</span>
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="coffeeMilk" value="oatMilk">
+                                    <div class="item-image">
+                                        <img src="Pics/oat milk.jpeg" alt="oatMilk">
+                                    </div>
+                                    <span class="radio-label">Oat Milk</span>
+                                    <span class="price">+$1.00</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <button type="button" id="addToOrderBtn" class="add-to-order-btn">
+                            <i class="fas fa-plus-circle"></i> Add to Order
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="order-summary-panel">
+                <div class="summary-content">
+                    <h3>Your Order Summary</h3>
+                    
+                    <div class="summary-section">
+                        <h4>Food Items</h4>
+                        <div id="foodSummaryItems">
+                            <div class="empty-state">No food items added yet</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <h4>Drinks</h4>
+                        <div id="drinkSummaryItems">
+                            <div class="empty-state">No drinks added yet</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <h4>Allergies</h4>
+                        <div id="allergySummaryItems">
+                            <div class="empty-state">No allergies specified</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span class="total-label">Total:</span>
+                        <span id="summaryTotalPrice" class="total-price">$0.00</span>
+                    </div>
+                    
+                    <button type="button" id="submitOrderBtn" class="submit-btn">
+                        <i class="fas fa-check-circle"></i> Place Order
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Crusher's Canteen. All rights reserved.</p>
+    </footer>
+    
+    <script src="JS/custom.js"></script>
+    <script src="JS/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crusher's Canteen - Home</title>
+    <!-- Link to external CSS stylesheets -->
+    <link rel="stylesheet" href="CSS/canteen.css">
+    <!-- Link to FontAwesome icons for using icons in navigation and buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Navbar with food image background -->
+    <nav class="navbar">
+        
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="canteen.html" class="active">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="custom.html">Custom Order</a>
+            <a href="about.html">About</a>
+        </div>
+        <!-- Logo in navbar -->
+        <div class="navbar-logo">
+            <!-- logo path -->
+            <img src="Pics/Crusher - non bg.png" alt="Crusher's Canteen Logo">
+        </div>
+        
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Hero section (banner with content) -->
+        <section class="hero">
+            <div class="banner">
+                <!-- Carousel for images -->
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <!-- Carousel images loaded dynamically with JavaScript -->
+                    </div>
+                    <div class="carousel-controls">
+                        <!-- Previous button for carousel -->
+                        <button class="carousel-btn prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <!-- Next button for carousel -->
+                        <button class="carousel-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <!-- Carousel indicators (dots below the images) -->
+                    <div class="carousel-indicators"></div>
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <!-- Main heading and subtitle -->
+                <h2>Welcome to Crusher's Canteen</h2>
+                <p>Supporting our local sporting club with fresh and delicious food</p>
+                <!-- Call-to-action buttons -->
+                <div class="cta-buttons">
+                    <a href="menu.html" class="btn primary">View Menu</a>
+                    <a href="custom.html" class="btn secondary">Create Custom Order</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section class="features">
+            <!-- Feature cards -->
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Quick Ordering</h3>
+                <p>Don't miss the game - order quickly and easily</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Customisation</h3>
+                <p>Create your perfect meal with our custom options</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Dietary Options</h3>
+                <p>Allergen-friendly options available</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>Thank you for supporting our local club!</p>
+        <p>&copy; 2025 Crusher's Canteen. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="JS/canteen.js"></script>
+    <script src="JS/navigation.js"></script>
+</body>
+</html>

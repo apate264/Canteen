@@ -1,0 +1,370 @@
+/* Defining color variables for easy management */
+:root {
+    --yellow: #FAC305; /* Yellow color used for highlights */
+    --navy: #000F54; /* Navy blue color for text and navbar */
+    --red: #FF1A00; /* Red color used for accent and buttons */
+    --white: #FFFFFF; /* White color used for background and text */
+    --purple: #3A0088; /* Purple color for navbar background, derived from screenshot */
+}
+
+/* Reset default browser margins, paddings, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Set a default font */
+}
+
+/* NAVBAR STYLING STARTS */
+
+/* Body styles: background and text color */
+body {
+    background-color: var(--white); /* White background for the page */
+    color: var(--navy); /* Text color set to navy blue */
+}
+
+
+
+
+/* NAVIGATION STARTS */
+
+/* Navbar with background image */
+.navbar {
+    background-image: url('file:///C:/Users/aumpa/OneDrive%20-%20Department%20of%20Education/Documents/Digital%20Solutions%20(/Website%20Practice/FIA%201%20-%20Website/Pics/banner%20with%20text.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;  
+    padding: 1rem 2rem;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center; 
+    position: fixed; 
+    width: 1300px; 
+    top: 0; 
+    z-index: 1000; 
+    height: 100px; /* Fixed height for navbar */
+    box-shadow: inset 0 0 0 1000px rgba(0, 15, 84, 0.85); /* Semi-transparent overlay */
+}
+
+/* Navbar logo styling */
+.navbar-logo {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100px; /* Increased size */
+    z-index: 1001; /* Ensure logo appears above other elements */
+}
+.navbar-logo img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+/* NAVBAR STYLING ENDS */
+
+/* NAVBAR LINKS STYLING START */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    perspective: 1000px;
+}
+.nav-links a {
+    color: var(--white);
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    padding: 0.8rem 1.2rem;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 0.2rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+.nav-links a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--yellow);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: -1;
+    opacity: 0;
+    border-radius: 4px;
+    transform: translateX(-50%);
+}
+.nav-links a:hover {
+    color: var(--navy);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    
+}
+.nav-links a:hover:before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+.nav-links a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.nav-links a.active {
+    color: var(--navy);
+    background-color: var(--yellow);
+    box-shadow: 0 6px 15px rgba(250, 195, 5, 0.5);
+    transform: translateY(-2px);
+    font-weight: bold;
+    border: 2px solid var(--yellow);
+}
+.nav-links a.active:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(250, 195, 5, 0.6);
+}
+.nav-links a.active:before {
+    display: none;
+}
+.nav-links a.active:after {
+    transform: scaleX(1);
+}
+
+/* NAVBAR LINKS STYLING ENDS */
+
+
+/* NAVIGATION ENDS */
+
+
+
+
+
+/* Mobile menu button styles */
+.mobile-menu-btn {
+    display: none; /* Hidden by default on larger screens */
+    background: none; /* No background for the button */
+    border: none; /* No border */
+    color: var(--white); /* White icon color */
+    font-size: 1.5rem; /* Icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hero section styles - ADJUSTED TO REMOVE WHITE SPACE */
+.hero {
+    margin-top: 70px; /* Match exact navbar height */
+    position: relative; /* Position hero content relative to the section */
+    height: auto; /* Auto height to fit content */
+    background-color: transparent; /* No background color */
+    margin-top: 100px;
+}
+
+/* Banner section within hero */
+.banner {
+    width: 100%; /* Full width */
+    height: 60vh; /* Use 60% of the viewport height */
+    position: relative; /* Positioning context for carousel */
+    overflow: hidden; /* Hide overflow for carousel images */
+}
+
+/* Carousel container styling */
+.carousel {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: relative; /* Containing positioning for controls */
+}
+
+/* Carousel container for holding slides */
+.carousel-container {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Use flexbox to arrange slides */
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+}
+
+/* Individual carousel slide styling */
+.carousel-slide {
+    min-width: 100%; /* Each slide takes up 100% width */
+    height: 100%; /* Full height */
+    position: relative; /* Position content within the slide */
+}
+
+/* Styling for images within carousel slides */
+.carousel-slide img {
+    width: 100%; /* Image takes full width */
+    height: 100%; /* Image takes full height */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+}
+
+/* Carousel control buttons (prev/next) */
+.carousel-controls {
+    position: absolute; /* Position buttons over carousel */
+    top: 50%; /* Vertically center the buttons */
+    width: 100%; /* Full width */
+    transform: translateY(-50%); /* Center vertically */
+    display: flex; /* Flexbox for spacing controls */
+    justify-content: space-between; /* Space between prev/next buttons */
+    padding: 0 2rem; /* Padding around buttons */
+}
+
+/* Styling for carousel control buttons */
+.carousel-btn {
+    background-color: rgba(0, 15, 84, 0.7); /* Semi-transparent navy background */
+    color: var(--white); /* White text/icon color */
+    border: none; /* Remove button border */
+    padding: 1rem; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Circular buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Hover effect for carousel buttons */
+.carousel-btn:hover {
+    background-color: var(--navy); /* Change to navy on hover */
+}
+
+/* Indicators at the bottom of the carousel */
+.carousel-indicators {
+    position: absolute; /* Position indicators at the bottom */
+    bottom: 20px; /* 20px from the bottom of the carousel */
+    width: 100%; /* Full width */
+    display: flex; /* Use flexbox for spacing indicators */
+    justify-content: center; /* Center the indicators */
+    gap: 1rem; /* Gap between indicators */
+}
+
+/* Individual indicator styles */
+.indicator {
+    width: 12px; /* Set the size of the indicator */
+    height: 12px; /* Set height */
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(255, 255, 255, 0.5); /* Light gray background */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition on click */
+}
+
+/* Active indicator styling */
+.indicator.active {
+    background-color: var(--white); /* White color for active indicator */
+}
+
+/* Hero content styling */
+.hero-content {
+    position: absolute; /* Position content over the carousel */
+    top: 50%; /* Vertically center the content */
+    left: 50%; /* Horizontally center the content */
+    transform: translate(-50%, -50%); /* Center the content */
+    text-align: center; /* Center the text */
+    color: var(--white); /* White text color */
+    background-color: rgba(0, 15, 84, 0.8); /* Semi-transparent background */
+    padding: 2rem; /* Padding around text */
+    border-radius: 8px; /* Rounded corners */
+    width: 80%; /* Set width */
+    max-width: 600px; /* Limit maximum width */
+}
+
+/* Hero heading styles */
+.hero-content h2 {
+    font-size: 2.5rem; /* Large font size */
+    margin-bottom: 1rem; /* Space below the heading */
+    color: var(--yellow); /* Yellow color for heading */
+}
+
+/* Hero paragraph styling */
+.hero-content p {
+    margin-bottom: 2rem; /* Space below the paragraph */
+    font-size: 1.2rem; /* Slightly larger font for readability */
+}
+
+/* Features section styles */
+.features {
+    display: grid; /* Use grid layout for feature cards */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto layout for responsiveness */
+    gap: 2rem; /* Space between feature cards */
+    padding: 4rem 2rem; /* Padding around the section */
+    background-color: var(--white); /* White background */
+    margin-top: 0; /* No margin at top */
+    border-top: 5px solid var(--navy); /* Navy border at top to connect with banner */
+}
+
+/* Individual feature card styles */
+.feature-card {
+    background-color: var(--white); /* White background */
+    padding: 2rem; /* Padding inside the card */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center the content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow around the card */
+    border: 2px solid var(--navy); /* Border around the card */
+    transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for feature cards */
+.feature-card:hover {
+    transform: translateY(-10px); /* Slight upward movement on hover */
+}
+
+/* Icon in feature cards */
+.feature-card i {
+    font-size: 2.5rem; /* Icon size */
+    color: var(--yellow); /* Yellow icon color */
+    margin-bottom: 1rem; /* Space below the icon */
+}
+
+/* Feature card heading styling */
+.feature-card h3 {
+    color: var(--red); /* Red heading color */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+/* Call-to-action buttons styling */
+.cta-buttons {
+    margin-top: 2rem; /* Space above the buttons */
+}
+
+.btn {
+    display: inline-block; /* Make buttons inline */
+    padding: 1rem 2rem; /* Padding for the button */
+    margin: 0 1rem; /* Margin between buttons */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    transform: translateY(-2px); /* Slight movement on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Primary button styles */
+.btn.primary {
+    background-color: var(--red); /* Red background */
+    color: var(--white); /* White text color */
+}
+
+/* Secondary button styles */
+.btn.secondary {
+    background-color: var(--navy); /* Navy background */
+    color: var(--white); /* White text color */
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--navy); /* Navy background for footer */
+    color: var(--white); /* White text color */
+    text-align: center; /* Center the text */
+    padding: 2rem; /* Padding inside the footer */
+    margin-top: 2rem; /* Margin above the footer */
+}

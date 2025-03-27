@@ -1,0 +1,231 @@
+:root {
+    --yellow: #FAC305;
+    --navy: #000F54;
+    --red: #FF1A00;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--navy);
+}
+
+
+
+
+
+/* NAVIGATION STARTS */
+
+/* Navbar with background image */
+.navbar {
+    background-image: url('file:///C:/Users/aumpa/OneDrive%20-%20Department%20of%20Education/Documents/Digital%20Solutions%20(/Website%20Practice/FIA%201%20-%20Website/Pics/banner%20with%20text.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;  
+    padding: 1rem 2rem;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center; 
+    position: fixed; 
+    width: 1300px; 
+    top: 0; 
+    z-index: 1000; 
+    height: 100px; /* Fixed height for navbar */
+    box-shadow: inset 0 0 0 1000px rgba(0, 15, 84, 0.85); /* Semi-transparent overlay */
+}
+
+/* Navbar logo styling */
+.navbar-logo {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100px; /* Increased size */
+    z-index: 1001; /* Ensure logo appears above other elements */
+}
+.navbar-logo img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+/* NAVBAR STYLING ENDS */
+
+/* NAVBAR LINKS STYLING START */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    perspective: 1000px;
+}
+.nav-links a {
+    color: var(--white);
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    padding: 0.8rem 1.2rem;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 0.2rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+.nav-links a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--yellow);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: -1;
+    opacity: 0;
+    border-radius: 4px;
+    transform: translateX(-50%);
+}
+.nav-links a:hover {
+    color: var(--navy);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    
+}
+.nav-links a:hover:before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+.nav-links a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.nav-links a.active {
+    color: var(--navy);
+    background-color: var(--yellow);
+    box-shadow: 0 6px 15px rgba(250, 195, 5, 0.5);
+    transform: translateY(-2px);
+    font-weight: bold;
+    border: 2px solid var(--yellow);
+}
+.nav-links a.active:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(250, 195, 5, 0.6);
+}
+.nav-links a.active:before {
+    display: none;
+}
+.nav-links a.active:after {
+    transform: scaleX(1);
+}
+
+/* NAVBAR LINKS STYLING ENDS */
+
+
+/* NAVIGATION ENDS */
+
+
+
+
+
+.about-hero {
+    background-color: var(--yellow);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--navy);
+    margin-top: 100px;
+
+
+   
+}
+
+.about-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.mission, .features {
+    margin-bottom: 3rem;
+}
+
+.mission h3, .features h3, .testimonials h3 {
+    color: var(--red);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.features ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.features li {
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--navy);
+}
+
+.testimonial-card h4 {
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .testimonial-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
